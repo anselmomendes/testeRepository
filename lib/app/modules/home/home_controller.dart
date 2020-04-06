@@ -1,15 +1,22 @@
+import 'package:assistencia/app/repositories/cellPhone_repositores.dart';
 import 'package:mobx/mobx.dart';
 
 part 'home_controller.g.dart';
 
-class HomeController = _HomeBase with _$HomeController;
+class HomeController = _HomeControllerBase with _$HomeController;
 
-abstract class _HomeBase with Store {
+abstract class _HomeControllerBase with Store {
+  final CellPhoneRepositories repository;
+
   @observable
-  int value = 0;
+  ObservableFuture celulares;
+
+  _HomeControllerBase({this.repository}) {
+    buscaCelular();
+  }
 
   @action
-  void increment() {
-    value++;
+  buscaCelular() {
+    celulares = repository.allCellPhone().asObservable();
   }
 }
