@@ -43,9 +43,9 @@ class _HomePageState extends State<HomePage> {
                 itemCount: list.length,
                 itemBuilder: (_, index) {
                   return ListTile(
-                    title: Text(list[index].marca.toString(),
+                    title: Text(list[index].nome.toString(),
                         style: TextStyle(fontWeight: FontWeight.w500)),
-                    subtitle: Text(list[index].modelo.toString()),
+                    subtitle: Text(list[index].sobrenome.toString()),
                     leading: Icon(
                       Icons.phone_iphone,
                       color: Colors.blue[500],

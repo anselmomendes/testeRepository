@@ -17,6 +17,6 @@ abstract class _HomeControllerBase with Store {
 
   @action
   buscaCelular() {
-    celulares = repository.allCellPhone().asObservable();
+    celulares = repository.thisCliente(1).asObservable();
   }
 }

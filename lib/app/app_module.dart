@@ -1,5 +1,4 @@
 import 'package:assistencia/app/app_controller.dart';
-import 'package:assistencia/app/modules/cell/cell_controller.dart';
 import 'package:assistencia/app/modules/home/home_controller.dart';
 import 'package:assistencia/app/repositories/cellPhone_repositores.dart';
 import 'package:assistencia/app/utils/Constants.dart';
