@@ -11,10 +11,12 @@ abstract class _ServicesBase with Store {
   @observable
   ObservableFuture servicos;
 
-  _ServicesBase({this.repository});
+  _ServicesBase({this.repository}) {
+    buscaServicos();
+  }
 
   @action
-  buscaCelular() {
+  buscaServicos() {
     servicos = repository.allServices().asObservable();
   }
 }

@@ -30,10 +30,10 @@ mixin _$ServicesController on _ServicesBase, Store {
       ActionController(name: '_ServicesBase');
 
   @override
-  dynamic buscaCelular() {
+  dynamic buscaServicos() {
     final _$actionInfo = _$_ServicesBaseActionController.startAction();
     try {
-      return super.buscaCelular();
+      return super.buscaServicos();
     } finally {
       _$_ServicesBaseActionController.endAction(_$actionInfo);
     }

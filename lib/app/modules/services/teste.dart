@@ -1,49 +1,46 @@
-import 'package:assistencia/app/modules/services/services_controller.dart';
+/*import 'package:aula_0/app/pages/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:mobx/mobx.dart';
 
-class ServicesPage extends StatefulWidget {
-  final String title;
-  const ServicesPage({Key key, this.title = "Services"}) : super(key: key);
+class HomePage extends StatefulWidget {
+  HomePage({Key key}) : super(key: key);
 
   @override
-  _ServicesPageState createState() => _ServicesPageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _ServicesPageState extends State<ServicesPage> {
-  final _servicesController = Modular.get<ServicesController>();
-
+class _HomePageState extends State<HomePage> {
+  final _homeController = Modular.get<HomeController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('HOME'),
       ),
       body: Observer(
         builder: (_) {
-          if (_servicesController.servicos.error != null) {
+          if (_homeController.pokemons.error != null) {
             return Center(
               child: RaisedButton(
                 onPressed: () {
-                  _servicesController.buscaServicos();
+                  _homeController.fetchPokemons();
                 },
                 child: Text('Press Again'),
               ),
             );
-          } else if (_servicesController.servicos.value == null) {
+          } else if (_homeController.pokemons.value == null) {
             return Center(
               child: CircularProgressIndicator(),
             );
           } else {
-            var list = _servicesController.servicos.value;
+            var list = _homeController.pokemons.value;
 
             return ListView.builder(
               itemCount: list.length,
               itemBuilder: (_, index) {
                 return ListTile(
-                  title: Text(list[index].nome.toString()),
+                  title: Text(list[index].name),
                 );
               },
             );
@@ -52,4 +49,4 @@ class _ServicesPageState extends State<ServicesPage> {
       ),
     );
   }
-}
+}*/

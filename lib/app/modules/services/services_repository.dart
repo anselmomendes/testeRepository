@@ -11,22 +11,21 @@ class ServicesRepository extends Disposable {
   ServicesRepository({@required this.dio});
 
   Future<List<Services>> allServices() async {
-    var response = await dio.get('/clientes');
+    var response = await dio.get('/servicos');
     List<Services> list = List<Services>();
     for (var item in (response.data as List)) {
       Services model = Services(
-          id: item['id'],
-          nome: item['Nome'],
-          descricao: item['Descricao'],
-          celular: CellPhones(),
-          cliente: Clientes());
+        id: item['id'],
+        nome: item['Nome'],
+        descricao: item['Descricao'],
+      );
       list.add(model);
     }
     return list;
   }
 
   Future<List<Services>> thisServices(int id) async {
-    var response = await dio.get('/clientes');
+    var response = await dio.get('/servicos');
     List<Services> list = List<Services>();
     for (var item in (response.data as List)) {
       if (id == item['id']) {
