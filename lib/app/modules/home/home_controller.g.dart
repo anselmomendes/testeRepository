@@ -26,19 +26,6 @@ mixin _$HomeController on _HomeControllerBase, Store {
     }, _$celularesAtom, name: '${_$celularesAtom.name}_set');
   }
 
-  final _$_HomeControllerBaseActionController =
-      ActionController(name: '_HomeControllerBase');
-
-  @override
-  dynamic buscaCelular() {
-    final _$actionInfo = _$_HomeControllerBaseActionController.startAction();
-    try {
-      return super.buscaCelular();
-    } finally {
-      _$_HomeControllerBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
   @override
   String toString() {
     final string = 'celulares: ${celulares.toString()}';

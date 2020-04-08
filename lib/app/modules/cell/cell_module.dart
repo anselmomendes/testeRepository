@@ -10,7 +10,7 @@ class CellModule extends ChildModule {
 
   @override
   List<Router> get routers => [
-        Router('/gg', child: (_, args) => CellPage()),
+        Router('/cellphone', child: (_, args) => CellPage()),
       ];
 
   static Inject get to => Inject<CellModule>.of();

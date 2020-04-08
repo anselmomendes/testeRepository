@@ -5,7 +5,7 @@ import 'package:assistencia/app/modules/home/home_page.dart';
 class HomeModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        Bind((i) => HomeController()),
+        //Bind((i) =>HomeModule HomeController()),
       ];
 
   @override
